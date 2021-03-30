@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!------ Include the above in your HEAD tag ---------->
+    
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/index.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="js/index.js"></script>
+        <script>
+            var test = <%= etudiants.length %>;
+            console.log(test)
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-8"><h2>List des etudiants</h2></div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> ajouter un etudiant</button>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Phone</th>
+                            <th>Adresse</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0; i < etudiants.length; i++) { %>
+                            <tr>
+                                <td> <%= etudiants[i].nom %> </td>
+                                <td> <%= etudiants[i].prenom %> </td>
+                                <td> <%= etudiants[i].phone %> </td>
+                                <td> <%= etudiants[i].adresse %> </td>
+                                <td>
+                                    <a class="add" title="Add" data-toggle="tooltip"
+                                    onclick="modifyEtudiant('<%= etudiants[i]._id%>')">
+                                    <i class="material-icons"></i></a>
+                                    <a class="edit" title="Edit"  data-toggle="tooltip" >
+                                        <i class="material-icons"></i></a>
+                                    <a class="delete" title="Delete" data-toggle="tooltip" onclick="deleteEtudiant('<%= etudiants[i]._id%>')"><i class="material-icons"></i></a>
+                                </td>
+                            </tr> 
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>    
+</html>
