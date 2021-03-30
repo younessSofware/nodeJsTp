@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "605c76ba2f8de0ef783bba90"
+  },
+  "nom": "Elhallaoui",
+  "prenom": "Youness",
+  "phone": "0653394653",
+  "adresse": "348 ijanan bloc 5 Safi"
+},{
+  "_id": {
+    "$oid": "605c7f532f8de0ef783bba91"
+  },
+  "nom": "Tougui",
+  "prenom": "Ahmed",
+  "phone": "0697906662",
+  "adresse": "hay nahda Safi"
+}]
